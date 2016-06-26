@@ -1,11 +1,11 @@
 function piano
 
 	pressSeq = [];
-	instrulist={'piano','guitar','flute1'};
+	instrulist={'piano','trumpet','flute1'};
 	
     % Create pop-up menu
     popup = uicontrol('Style', 'popup',...
-           'String', {'piano','guitar','flute1'},...
+           'String', {'piano','trumpet','flute1'},...
            'Position', [20 340 100 50],...
            'Callback', @popup_callback);
 	endBtn = uicontrol('Style', 'pushbutton', ...
@@ -129,28 +129,28 @@ function piano
 	end
 
 	function cs4_callback(source, callbackdata)
-		playnote('Db4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq;'Db4'];
+		playnote('Db',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Db'];
 	end
 
 	function ds4_callback(source, callbackdata)
-		playnote('Eb4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq;'Eb4'];
+		playnote('Eb',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Eb'];
 	end
 
 	function fs4_callback(source, callbackdata)
-		playnote('Gb4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq;'Gb4'];
+		playnote('Gb',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Gb'];
 	end
 
 	function gs4_callback(source, callbackdata)
-		playnote('Ab4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq;'Ab4'];
+		playnote('Ab',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Ab'];
 	end
 
 	function as4_callback(source, callbackdata)
-		playnote('Bb4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq;'Bb4'];
+		playnote('Bb',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Bb'];
 	end
 
 	function popup_callback(source,callbackdata)
