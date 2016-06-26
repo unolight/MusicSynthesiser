@@ -18,8 +18,8 @@ function piano
 	x = [];
 
     % Create pop-up menu
-   popup = uicontrol('Style', 'popup',...
-           'String', 'piano| guitar',...
+    popup = uicontrol('Style', 'popup',...
+           'String', {'piano','guitar','flute'},...
            'Position', [20 340 100 50],...
            'Callback', @popup_callback);
    endBtn = uicontrol('Style', 'pushbutton', ...
@@ -157,7 +157,7 @@ function piano
 		sound(x, Fc4)
 		x = [];
 	end
-	
+
 	function clr_callback(source, callbackdata)
 		x = [];
 	end
@@ -173,3 +173,4 @@ function piano
     end
 	
 end
+
