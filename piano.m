@@ -98,63 +98,63 @@ function piano
 		'String', 'A#',...
 		'Callback', @as4_callback);
 			function b3_callback(source, callbackdata)
-				sound(b3, Fb3)
+				soundsc(b3, Fb3)
 				x = [x b3'];
 			end
 			function c4_callback(source, callbackdata)
-				sound(c4, Fc4)
+				soundsc(c4, Fc4)
 				x = [x c4'];
 			end
 			function d4_callback(source, callbackdata)
-				sound(d4, Fd4)
+				soundsc(d4, Fd4)
 				x = [x d4'];
 			end
 			function e4_callback(source, callbackdata)
-				sound(e4, Fe4)
+				soundsc(e4, Fe4)
 				x = [x e4'];
 			end
 			function f4_callback(source, callbackdata)
-				sound(f4, Ff4)
+				soundsc(f4, Ff4)
 				x = [x f4'];
 			end
 			function g4_callback(source, callbackdata)
-				sound(g4, Fg4)
+				soundsc(g4, Fg4)
 				x = [x g4'];
 			end
 			function a4_callback(source, callbackdata)
-				sound(a4, Fa4)
+				soundsc(a4, Fa4)
 				x = [x a4'];
 			end
 			function b4_callback(source, callbackdata)
-				sound(b4, Fb4)				
+				soundsc(b4, Fb4)				
 				x = [x b4'];
 			end
 			function c5_callback(source, callbackdata)
-				sound(c5, Fc5)
+				soundsc(c5, Fc5)
 				x = [x c5'];
 			end
 			function cs4_callback(source, callbackdata)
-				sound(cs4, Fcs4)
+				soundsc(cs4, Fcs4)
 					x = [x cs4'];
 			end
 			function ds4_callback(source, callbackdata)
-				sound(ds4, Fds4)
+				soundsc(ds4, Fds4)
 				x = [x ds4'];
 			end
 			function fs4_callback(source, callbackdata)
-				sound(fs4, Ffs4)
+				soundsc(fs4, Ffs4)
 				x = [x fs4'];
 			end
 			function gs4_callback(source, callbackdata)
-				sound(gs4, Fgs4)
+				soundsc(gs4, Fgs4)
 				x = [x gs4'];
 			end
 			function as4_callback(source, callbackdata)
-				sound(as4, Fas4)
+				soundsc(as4, Fas4)
 				x = [x as4'];
 			end
 	function end_callback(source, callbackdata)
-		sound(x, Fc4)
+		soundsc(x, Fc4)
 		x = [];
 	end
 
