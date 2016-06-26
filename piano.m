@@ -88,85 +88,99 @@ function piano
 		'Callback', @as4_callback);
 
 	function b3_callback(source, callbackdata)
-		playnote('B3',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('B3',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'B3'};
 	end
 
 	function c4_callback(source, callbackdata)
-		playnote('C4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('C4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'C4'};
 	end
 
 	function d4_callback(source, callbackdata)
-		playnote('D4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('D4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'D4'};
 	end
 
 	function e4_callback(source, callbackdata)
-		playnote('E4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('E4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'E4'};
 	end
 
 	function f4_callback(source, callbackdata)
-		playnote('F4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('F4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'F4'};
 	end
 
 	function g4_callback(source, callbackdata)
-		playnote('G4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('G4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'G4'};
 	end
 
 	function a4_callback(source, callbackdata)
-		playnote('A4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('A4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'A4'};
 	end
 
 	function b4_callback(source, callbackdata)
-		playnote('B4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('B4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'B4'};
 	end
 
 	function c5_callback(source, callbackdata)
-		playnote('C5',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('C5',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'C5'};
 	end
 
 	function cs4_callback(source, callbackdata)
-		playnote('Db4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('Db4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'Db4'};
 	end
 
 	function ds4_callback(source, callbackdata)
-		playnote('Eb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('Eb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'Eb4'};
 	end
 
 	function fs4_callback(source, callbackdata)
-		playnote('Gb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('Gb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'Gb4'};
 	end
 
 	function gs4_callback(source, callbackdata)
-		playnote('Ab4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('Ab4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'Ab4'};
 	end
 
 	function as4_callback(source, callbackdata)
-		playnote('Bb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		[y,fs]=playnote('Bb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+		soundsc(y,fs);
 		currLen=length(pressSeq);
 		pressSeq{1,currLen+1} = {'Bb4'};
 	end
@@ -179,7 +193,8 @@ function piano
 
 	function end_callback(source, callbackdata)
 		for i=1:length(pressSeq)
-			playnote(char(pressSeq{1,i}),instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+			[y,fs]=playnote(char(pressSeq{1,i}),instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+			soundsc(y,fs);
 			pause(1);
 		end
 	end

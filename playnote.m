@@ -1,4 +1,4 @@
-function []=playnote(pitch,instru1,instru2)
+function [wave,fs]=playnote(pitch,instru1,instru2)
 	instru1=char(instru1);
 	instru2=char(instru2);
 	instru1File=strcat('./src/',instru1,'/',instru1,'_',pitch);
@@ -34,5 +34,6 @@ function []=playnote(pitch,instru1,instru2)
 	len=min([length(y1),length(y2)]);
 	y1=y1(1:len);
 	y2=y2(1:len);
-	soundsc(y1 + y2,44100);
+	wave=y1+y2;
+	fs=44100;
 end
