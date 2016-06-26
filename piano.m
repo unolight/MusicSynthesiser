@@ -93,46 +93,46 @@ AS4 = uicontrol('Style', 'pushbutton', ...
 
 
 function b3_callback(source, callbackdata)
-	playnote(b3,get(popup,'Value'));
+	playnote('b3',get(popup,'Value'));
 end
 function c4_callback(source, callbackdata)
-	sound(c4, Fc4);
+	playnote('c4',get(popup,'Value'));
 end
 function d4_callback(source, callbackdata)
-	sound(d4, Fd4);
+	playnote('d4',get(popup,'Value'));
 end
 function e4_callback(source, callbackdata)
-	sound(e4, Fe4);
+	playnote('e4',get(popup,'Value'));
 end
 function f4_callback(source, callbackdata)
-	sound(f4, Ff4);
+	playnote('f4',get(popup,'Value'));
 end
 function g4_callback(source, callbackdata)
-	sound(g4, Fg4);
+	playnote('g4',get(popup,'Value'));
 end
 function a4_callback(source, callbackdata)
-	sound(a4, Fa4);
+	playnote('a4',get(popup,'Value'));
 end
 function b4_callback(source, callbackdata)
-	sound(b4, Fb4);
+	playnote('b4',get(popup,'Value'));
 end
 function c5_callback(source, callbackdata)
-	sound(c5, Fc5);
+	playnote('c5',get(popup,'Value'));
 end
 function cs4_callback(source, callbackdata)
-	sound(cs4, Fcs4);
+	playnote('cs4',get(popup,'Value'));
 end
 function ds4_callback(source, callbackdata)
-	sound(ds4, Fds4);
+	playnote('ds4',get(popup,'Value'));
 end
 function fs4_callback(source, callbackdata)
-	sound(fs4, Ffs4);
+	playnote('fs4',get(popup,'Value'));
 end
 function gs4_callback(source, callbackdata)
-	sound(gs4, Fgs4);
+	playnote('gs4',get(popup,'Value'));
 end
 function as4_callback(source, callbackdata)
-	sound(as4, Fas4);
+	playnote('as4',get(popup,'Value'));
 end
 
 
