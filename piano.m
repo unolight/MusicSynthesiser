@@ -1,36 +1,22 @@
 function piano
-	[b3,Fb3] = audioread('src/Piano.mf.B3_cut');
-	[c4,Fc4] = audioread('src/Piano.mf.C4_cut');
-	[d4,Fd4] = audioread('src/Piano.mf.D4_cut');
-	[e4,Fe4] = audioread('src/Piano.mf.E4_cut');
-	[f4,Ff4] = audioread('src/Piano.mf.F4_cut');
-	[g4,Fg4] = audioread('src/Piano.mf.G4_cut');
-	[a4,Fa4] = audioread('src/Piano.mf.A4_cut');
-	[b4,Fb4] = audioread('src/Piano.mf.B4_cut');
-	[c5,Fc5] = audioread('src/Piano.mf.C5_cut');
 
-	[cs4,Fcs4] = audioread('src/Piano.mf.Db4_cut');
-	[ds4,Fds4] = audioread('src/Piano.mf.Eb4_cut');
-	[fs4,Ffs4] = audioread('src/Piano.mf.Gb4_cut');
-	[gs4,Fgs4] = audioread('src/Piano.mf.Ab4_cut');
-	[as4,Fas4] = audioread('src/Piano.mf.Bb4_cut');
-
-	x = [];
-
+	pressSeq = [];
+	instrulist={'piano','guitar','flute'};
+	
     % Create pop-up menu
     popup = uicontrol('Style', 'popup',...
            'String', {'piano','guitar','flute'},...
            'Position', [20 340 100 50],...
            'Callback', @popup_callback);
-   endBtn = uicontrol('Style', 'pushbutton', ...
+	endBtn = uicontrol('Style', 'pushbutton', ...
    		 'position', [180 125 200 30], ...
    		 'String', 'End', ...
    		 'Callback', @end_callback);
-   clrBtn = uicontrol('Style', 'pushbutton', ...
+	clrBtn = uicontrol('Style', 'pushbutton', ...
    		 'position', [180 75 200 30], ...
    		 'String', 'Clear', ...
    		 'Callback', @clr_callback);
-   B3 = uicontrol('Style', 'pushbutton', ...
+	B3 = uicontrol('Style', 'pushbutton', ...
 		'position', [60+40 200 40 95],...
 		'String', 'B3', ...
 		'Callback', @b3_callback);
@@ -66,7 +52,6 @@ function piano
 		'position', [380+40 200 40 95],...
 		'String', 'C5', ...
 		'Callback', @c5_callback);
-
 	CS4 = uicontrol('Style', 'pushbutton', ...
 		'position', [130+40 270 20 80],...
 		'BackgroundColor', [0 0 0],...
@@ -97,80 +82,86 @@ function piano
 		'ForegroundColor', [1 1 1],...
 		'String', 'A#',...
 		'Callback', @as4_callback);
-			function b3_callback(source, callbackdata)
-				soundsc(b3, Fb3)
-				x = [x b3'];
-			end
-			function c4_callback(source, callbackdata)
-				soundsc(c4, Fc4)
-				x = [x c4'];
-			end
-			function d4_callback(source, callbackdata)
-				soundsc(d4, Fd4)
-				x = [x d4'];
-			end
-			function e4_callback(source, callbackdata)
-				soundsc(e4, Fe4)
-				x = [x e4'];
-			end
-			function f4_callback(source, callbackdata)
-				soundsc(f4, Ff4)
-				x = [x f4'];
-			end
-			function g4_callback(source, callbackdata)
-				soundsc(g4, Fg4)
-				x = [x g4'];
-			end
-			function a4_callback(source, callbackdata)
-				soundsc(a4, Fa4)
-				x = [x a4'];
-			end
-			function b4_callback(source, callbackdata)
-				soundsc(b4, Fb4)				
-				x = [x b4'];
-			end
-			function c5_callback(source, callbackdata)
-				soundsc(c5, Fc5)
-				x = [x c5'];
-			end
-			function cs4_callback(source, callbackdata)
-				soundsc(cs4, Fcs4)
-					x = [x cs4'];
-			end
-			function ds4_callback(source, callbackdata)
-				soundsc(ds4, Fds4)
-				x = [x ds4'];
-			end
-			function fs4_callback(source, callbackdata)
-				soundsc(fs4, Ffs4)
-				x = [x fs4'];
-			end
-			function gs4_callback(source, callbackdata)
-				soundsc(gs4, Fgs4)
-				x = [x gs4'];
-			end
-			function as4_callback(source, callbackdata)
-				soundsc(as4, Fas4)
-				x = [x as4'];
-			end
+
+	function b3_callback(source, callbackdata)
+		playnote('B3',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'B3'];
+	end
+
+	function c4_callback(source, callbackdata)
+		playnote('C4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'C4'];
+	end
+
+	function d4_callback(source, callbackdata)
+		playnote('D4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'D4'];
+	end
+
+	function e4_callback(source, callbackdata)
+		playnote('E4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'E4'];
+	end
+
+	function f4_callback(source, callbackdata)
+		playnote('F4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'F4'];
+	end
+
+	function g4_callback(source, callbackdata)
+		playnote('G4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'G4'];
+	end
+
+	function a4_callback(source, callbackdata)
+		playnote('A4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'A4'];
+	end
+
+	function b4_callback(source, callbackdata)
+		playnote('B4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'B4'];
+	end
+
+	function c5_callback(source, callbackdata)
+		playnote('C5',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'C5'];
+	end
+
+	function cs4_callback(source, callbackdata)
+		playnote('Db4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Db4'];
+	end
+
+	function ds4_callback(source, callbackdata)
+		playnote('Eb4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Eb4'];
+	end
+
+	function fs4_callback(source, callbackdata)
+		playnote('Gb4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Gb4'];
+	end
+
+	function gs4_callback(source, callbackdata)
+		playnote('Ab4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Ab4'];
+	end
+
+	function as4_callback(source, callbackdata)
+		playnote('Bb4',instrulist(get(popup,'Value')));
+		pressSeq = [pressSeq;'Bb4'];
+	end
+
 	function end_callback(source, callbackdata)
-		soundsc(x, Fc4)
-		x = [];
+		play_seq(pressSeq,instrulist(get(popup,'Value')));
+		pressSeq = [];
 	end
 
 	function clr_callback(source, callbackdata)
-		x = [];
+		pressSeq = [];
 	end
 	
-	function popup_callback(source, callbackdata)  
-    	v=get(source, 'Value');
-        
-        if v == 1
-
-        elseif v == 2
-        	
-        end
-    end
 	
 end
 
