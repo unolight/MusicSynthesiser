@@ -1,13 +1,17 @@
 function piano
 
 	pressSeq = [];
-	instrulist={'piano','guitar','flute1'};
+	instrulist={'piano','flute1'};
 	
     % Create pop-up menu
-    popup = uicontrol('Style', 'popup',...
-           'String', {'piano','guitar','flute1'},...
+    instru1 = uicontrol('Style', 'popup',...
+           'String', {'piano','flute1'},...
            'Position', [20 340 100 50],...
-           'Callback', @popup_callback);
+           'Callback', @instru1_callback);
+	instru2 = uicontrol('Style', 'popup',...
+			'String',{'piano','flute1'},...
+			'Position', [20+120 340 100 50],...
+			'Callback', @instru2_callback);
 	endBtn = uicontrol('Style', 'pushbutton', ...
    		 'position', [180 125 200 30], ...
    		 'String', 'End', ...
@@ -84,76 +88,79 @@ function piano
 		'Callback', @as4_callback);
 
 	function b3_callback(source, callbackdata)
-		playnote('B3',instrulist(get(popup,'Value')));
+		playnote('B3',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'B3'];
 	end
 
 	function c4_callback(source, callbackdata)
-		playnote('C4',instrulist(get(popup,'Value')));
+		playnote('C4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'C4'];
 	end
 
 	function d4_callback(source, callbackdata)
-		playnote('D4',instrulist(get(popup,'Value')));
+		playnote('D4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'D4'];
 	end
 
 	function e4_callback(source, callbackdata)
-		playnote('E4',instrulist(get(popup,'Value')));
+		playnote('E4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'E4'];
 	end
 
 	function f4_callback(source, callbackdata)
-		playnote('F4',instrulist(get(popup,'Value')));
+		playnote('F4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'F4'];
 	end
 
 	function g4_callback(source, callbackdata)
-		playnote('G4',instrulist(get(popup,'Value')));
+		playnote('G4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'G4'];
 	end
 
 	function a4_callback(source, callbackdata)
-		playnote('A4',instrulist(get(popup,'Value')));
+		playnote('A4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'A4'];
 	end
 
 	function b4_callback(source, callbackdata)
-		playnote('B4',instrulist(get(popup,'Value')));
+		playnote('B4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'B4'];
 	end
 
 	function c5_callback(source, callbackdata)
-		playnote('C5',instrulist(get(popup,'Value')));
+		playnote('C5',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'C5'];
 	end
 
 	function cs4_callback(source, callbackdata)
-		playnote('Db4',instrulist(get(popup,'Value')));
+		playnote('Db4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'Db4'];
 	end
 
 	function ds4_callback(source, callbackdata)
-		playnote('Eb4',instrulist(get(popup,'Value')));
+		playnote('Eb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'Eb4'];
 	end
 
 	function fs4_callback(source, callbackdata)
-		playnote('Gb4',instrulist(get(popup,'Value')));
+		playnote('Gb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'Gb4'];
 	end
 
 	function gs4_callback(source, callbackdata)
-		playnote('Ab4',instrulist(get(popup,'Value')));
+		playnote('Ab4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'Ab4'];
 	end
 
 	function as4_callback(source, callbackdata)
-		playnote('Bb4',instrulist(get(popup,'Value')));
+		playnote('Bb4',instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 		pressSeq = [pressSeq;'Bb4'];
 	end
 
-	function popup_callback(source,callbackdata)
+	function instru1_callback(source,callbackdata)
+	end
+
+	function instru2_callback(source,callbackdata)
 	end
 
 	function end_callback(source, callbackdata)
