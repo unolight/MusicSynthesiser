@@ -1,8 +1,8 @@
 function [wave,fs]=playnote(pitch,vol1,instru1,vol2,instru2,duration)
 	instru1=char(instru1);
 	instru2=char(instru2);
-	instru1File=strcat('./src/',instru1,'/',instru1,'_',pitch);
-	instru2File=strcat('./src/',instru2,'/',instru2,'_',pitch);
+	instru1File=strcat('./src/',instru1,'/',instru1,'_',pitch,'.wav');
+	instru2File=strcat('./src/',instru2,'/',instru2,'_',pitch,'.wav');
 	[y1,fs1]=audioread(instru1File);
 	douChaFlag=0;
 	[m,n]=size(y1);
