@@ -182,7 +182,6 @@ function piano
 			playnote(char(pressSeq{1,i}),instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
 			pause(1);
 		end
-		pressSeq = {};
 	end
 
 	function clr_callback(source, callbackdata)
