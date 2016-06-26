@@ -85,72 +85,72 @@ function piano
 
 	function b3_callback(source, callbackdata)
 		playnote('B3',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'B3'];
+		pressSeq = [pressSeq;'B3'];
 	end
 
 	function c4_callback(source, callbackdata)
 		playnote('C4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'C4'];
+		pressSeq = [pressSeq;'C4'];
 	end
 
 	function d4_callback(source, callbackdata)
 		playnote('D4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'D4'];
+		pressSeq = [pressSeq;'D4'];
 	end
 
 	function e4_callback(source, callbackdata)
 		playnote('E4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'E4'];
+		pressSeq = [pressSeq;'E4'];
 	end
 
 	function f4_callback(source, callbackdata)
 		playnote('F4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'F4'];
+		pressSeq = [pressSeq;'F4'];
 	end
 
 	function g4_callback(source, callbackdata)
 		playnote('G4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'G4'];
+		pressSeq = [pressSeq;'G4'];
 	end
 
 	function a4_callback(source, callbackdata)
 		playnote('A4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'A4'];
+		pressSeq = [pressSeq;'A4'];
 	end
 
 	function b4_callback(source, callbackdata)
 		playnote('B4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'B4'];
+		pressSeq = [pressSeq;'B4'];
 	end
 
 	function c5_callback(source, callbackdata)
 		playnote('C5',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'C5'];
+		pressSeq = [pressSeq;'C5'];
 	end
 
 	function cs4_callback(source, callbackdata)
 		playnote('Db4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'Db4'];
+		pressSeq = [pressSeq;'Db4'];
 	end
 
 	function ds4_callback(source, callbackdata)
 		playnote('Eb4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'Eb4'];
+		pressSeq = [pressSeq;'Eb4'];
 	end
 
 	function fs4_callback(source, callbackdata)
 		playnote('Gb4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'Gb4'];
+		pressSeq = [pressSeq;'Gb4'];
 	end
 
 	function gs4_callback(source, callbackdata)
 		playnote('Ab4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'Ab4'];
+		pressSeq = [pressSeq;'Ab4'];
 	end
 
 	function as4_callback(source, callbackdata)
 		playnote('Bb4',instrulist(get(popup,'Value')));
-		pressSeq = [pressSeq 'Bb4'];
+		pressSeq = [pressSeq;'Bb4'];
 	end
 
 	function end_callback(source, callbackdata)
