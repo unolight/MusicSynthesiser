@@ -1,4 +1,4 @@
-function [wave,fs]=playnote(pitch,instru1,instru2)
+function [wave,fs]=playnote(pitch,vol1,instru1,vol2,instru2,duration)
 	instru1=char(instru1);
 	instru2=char(instru2);
 	instru1File=strcat('./src/',instru1,'/',instru1,'_',pitch);
@@ -13,9 +13,9 @@ function [wave,fs]=playnote(pitch,instru1,instru2)
 		y1=y1';
 	end
 	y1=resample(y1,44100,fs1);
-	y1(1,:)=100*y1(1,:)/max(abs(y1(1,:)));
+	y1(1,:)=vol1*100*y1(1,:)/max(abs(y1(1,:)));
 	if douChaFlag==1
-		y1(2,:)=100*y1(2,:)/max(abs(y1(2,:)));
+		y1(2,:)=vol1*100*y1(2,:)/max(abs(y1(2,:)));
 	end
 	douChaFlag=0;
 	[y2,fs2]=audioread(instru2File);
@@ -27,13 +27,16 @@ function [wave,fs]=playnote(pitch,instru1,instru2)
 		y2=y2';
 	end
 	y2=resample(y2,44100,fs2);
-	y2(1,:)=100*y2(1,:)/max(abs(y2(1,:)));
+	y2(1,:)=vol2*100*y2(1,:)/max(abs(y2(1,:)));
 	if douChaFlag==1
-		y2(2,:)=100*y2(2,:)/max(abs(y2(2,:)));
+		y2(2,:)=vol2*100*y2(2,:)/max(abs(y2(2,:)));
 	end
 	len=min([length(y1),length(y2)]);
 	y1=y1(1:len);
 	y2=y2(1:len);
 	wave=y1+y2;
+	if length(wave) > 44100*duration
+		wave=wave(1:44100*duration);
+	end
 	fs=44100;
 end
