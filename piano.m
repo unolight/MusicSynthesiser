@@ -2,7 +2,7 @@ function piano
 
     % Create pop-up menu
     popup = uicontrol('Style', 'popup',...
-           'String', {'piano'},...
+           'String', {'piano','guitar','flute'},...
            'Position', [20 340 100 50],...
            'Callback', @setmap);    
     
@@ -75,65 +75,64 @@ AS4 = uicontrol('Style', 'pushbutton', ...
 	'String', 'A#',...
 	'Callback', @as4_callback);
 	
-	[b3,Fb3] = audioread('src/Piano.mf.B3.aiff');
-	[c4,Fc4] = audioread('src/Piano.mf.C4.aiff');
-	[d4,Fd4] = audioread('src/Piano.mf.D4.aiff');
-	[e4,Fe4] = audioread('src/Piano.mf.E4.aiff');
-	[f4,Ff4] = audioread('src/Piano.mf.F4.aiff');
-	[g4,Fg4] = audioread('src/Piano.mf.G4.aiff');
-	[a4,Fa4] = audioread('src/Piano.mf.A4.aiff');
-	[b4,Fb4] = audioread('src/Piano.mf.B4.aiff');
-	[c5,Fc5] = audioread('src/Piano.mf.C5.aiff');
+	[b3,Fb3] = audioread('src/Piano.mf.B3_cut');
+	[c4,Fc4] = audioread('src/Piano.mf.C4_cut');
+	[d4,Fd4] = audioread('src/Piano.mf.D4_cut');
+	[e4,Fe4] = audioread('src/Piano.mf.E4_cut');
+	[f4,Ff4] = audioread('src/Piano.mf.F4_cut');
+	[g4,Fg4] = audioread('src/Piano.mf.G4_cut');
+	[a4,Fa4] = audioread('src/Piano.mf.A4_cut');
+	[b4,Fb4] = audioread('src/Piano.mf.B4_cut');
+	[c5,Fc5] = audioread('src/Piano.mf.C5_cut');
 
-	[cs4,Fcs4] = audioread('src/Piano.mf.Db4.aiff');
-	[ds4,Fds4] = audioread('src/Piano.mf.Eb4.aiff');
-	[fs4,Ffs4] = audioread('src/Piano.mf.Gb4.aiff');
-	[gs4,Fgs4] = audioread('src/Piano.mf.Ab4.aiff');
-	[as4,Fas4] = audioread('src/Piano.mf.Bb4.aiff');
+	[cs4,Fcs4] = audioread('src/Piano.mf.Db4_cut');
+	[ds4,Fds4] = audioread('src/Piano.mf.Eb4_cut');
+	[fs4,Ffs4] = audioread('src/Piano.mf.Gb4_cut');
+	[gs4,Fgs4] = audioread('src/Piano.mf.Ab4_cut');
+	[as4,Fas4] = audioread('src/Piano.mf.Bb4_cut');
 
 
 function b3_callback(source, callbackdata)
-	sound(b3, Fb3)
+	playnote(b3,get(popup,'Value'));
 end
 function c4_callback(source, callbackdata)
-	sound(c4, Fc4)
+	sound(c4, Fc4);
 end
 function d4_callback(source, callbackdata)
-	sound(d4, Fd4)
+	sound(d4, Fd4);
 end
 function e4_callback(source, callbackdata)
-	sound(e4, Fe4)
+	sound(e4, Fe4);
 end
 function f4_callback(source, callbackdata)
-	sound(f4, Ff4)
+	sound(f4, Ff4);
 end
 function g4_callback(source, callbackdata)
-	sound(g4, Fg4)
+	sound(g4, Fg4);
 end
 function a4_callback(source, callbackdata)
-	sound(a4, Fa4)
+	sound(a4, Fa4);
 end
 function b4_callback(source, callbackdata)
-	sound(b4, Fb4)
+	sound(b4, Fb4);
 end
 function c5_callback(source, callbackdata)
-	sound(c5, Fc5)
+	sound(c5, Fc5);
 end
-
 function cs4_callback(source, callbackdata)
-	sound(cs4, Fcs4)
+	sound(cs4, Fcs4);
 end
 function ds4_callback(source, callbackdata)
-	sound(ds4, Fds4)
+	sound(ds4, Fds4);
 end
 function fs4_callback(source, callbackdata)
-	sound(fs4, Ffs4)
+	sound(fs4, Ffs4);
 end
 function gs4_callback(source, callbackdata)
-	sound(gs4, Fgs4)
+	sound(gs4, Fgs4);
 end
 function as4_callback(source, callbackdata)
-	sound(as4, Fas4)
+	sound(as4, Fas4);
 end
 
 
