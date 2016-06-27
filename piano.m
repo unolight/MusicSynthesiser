@@ -217,7 +217,7 @@ function piano
 
 	function end_callback(source, callbackdata)
 		for i=1:length(pressSeq)
-			[y,fs]=playnote(char(pressSeq{1,i}),instrulist(get(instru1,'Value')),instrulist(get(instru2,'Value')));
+			[y,fs]=playnote(char(pressSeq{1,i}),vollist(get(instru1Vol,'Value')),instrulist(get(instru1,'Value')),vollist(get(instru2Vol,'Value')),instrulist(get(instru2,'Value')),duralist(get(duration,'Value')));
 			soundsc(y,fs);
 			pause(1);
 		end
